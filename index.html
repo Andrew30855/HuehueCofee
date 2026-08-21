@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fffaf5" />
+    <title>HuehueCofee · Café de especialidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="#inicio" aria-label="HuehueCofee inicio"><span>Huehue</span>Cofee</a>
+      <nav class="links" aria-label="Navegación principal">
+        <a href="#menu" data-i18n="navMenu">Menú</a><a href="#historia" data-i18n="navStory">Nuestra historia</a><a href="#visita" data-i18n="navVisit">Visítanos</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-button" id="langBtn" aria-label="Cambiar idioma">ES</button>
+        <button class="icon-button" id="themeBtn" aria-label="Cambiar tema">☼</button>
+        <button class="cart-button" id="cartBtn" aria-label="Ver pedido"><span>Mi orden</span><b id="cartCount">0</b></button>
+        <button class="menu-button" id="menuBtn" aria-label="Abrir menú">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="eyebrow">CAFÉ · COCINA · COMUNIDAD</p>
+          <h1 data-i18n="heroTitle">Momentos que saben a <em>casa.</em></h1>
+          <p class="intro" data-i18n="heroText">Café de origen, comida hecha con intención y un espacio para quedarte un poco más.</p>
+          <div class="hero-actions"><a class="button primary" href="#menu" data-i18n="viewMenu">Explorar el menú <span>→</span></a><button class="button text-button" id="locationBtn" data-i18n="findUs">Cómo llegar <span>↗</span></button></div>
+          <div class="hero-meta"><div><strong>07:00 — 21:00</strong><span data-i18n="daily">Todos los días</span></div><div><strong>Huehuetenango, Guatemala</strong><span data-i18n="address">Centro histórico</span></div></div>
+        </div>
+        <div class="hero-art"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=85" alt="Preparación de café filtrado" /><div class="round-stamp"><span>HECHO CON<br>CALMA · 2026</span></div><p class="caption">Mañanas lentas, café brillante.</p></div>
+      </section>
+
+      <section class="menu-section" id="menu">
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="ourSelection">NUESTRA SELECCIÓN</p><h2 data-i18n="menuTitle">El menú de hoy</h2></div><p data-i18n="menuSubtitle">Ingredientes honestos, productores cercanos y recetas que cambian con la temporada.</p></div>
+        <div class="menu-controls"><div class="filters" id="filters"></div><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Busca tu antojo" /></label></div>
+        <div class="products-grid" id="productsGrid"></div>
+        <button class="button outline" id="showMore" data-i18n="showMore">Ver toda la carta <span>↓</span></button>
+      </section>
+
+      <section class="feature" id="historia"><div class="feature-image"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1100&q=85" alt="Interior acogedor de cafetería" /></div><div class="feature-copy"><p class="eyebrow" data-i18n="aboutEyebrow">DESDE 2018</p><h2 data-i18n="aboutTitle">Un buen café es una excusa para encontrarnos.</h2><p data-i18n="aboutText">HuehueCofee nació con una idea grande: hacer del café diario un ritual más consciente. Trabajamos con granos guatemaltecos y una cocina que honra lo local.</p><a href="#visita" class="arrow-link" data-i18n="aboutLink">Conoce nuestra historia <span>→</span></a></div></section>
+
+      <section class="visit" id="visita"><div><p class="eyebrow" data-i18n="visitEyebrow">VEN A VISITARNOS</p><h2 data-i18n="visitTitle">Tu mesa te espera.</h2><p>Centro histórico<br>Huehuetenango, Guatemala</p><a class="arrow-link" href="mailto:hola@huehuecofee.gt">hola@huehuecofee.gt <span>↗</span></a></div><div class="hours"><div><span data-i18n="mondayFriday">Lunes — Viernes</span><strong>07:00 — 21:00</strong></div><div><span data-i18n="weekend">Sábado — Domingo</span><strong>08:00 — 20:00</strong></div><div class="socials"><a href="#">Instagram</a><a href="#">WhatsApp</a></div></div></section>
+    </main>
+    <footer><a class="brand" href="#inicio"><span>Huehue</span>Cofee</a><p>© 2026 HuehueCofee</p><p data-i18n="footer">Hecho con cariño en Huehuetenango.</p></footer>
+
+    <aside class="drawer cart-drawer" id="cartDrawer"><button class="close" data-close="cartDrawer">×</button><p class="eyebrow" data-i18n="yourOrder">TU ORDEN</p><h2 data-i18n="cartTitle">Lo que elegiste</h2><div id="cartItems" class="cart-items"></div><div class="cart-total"><span data-i18n="total">Total</span><strong id="cartTotal">Q0.00</strong></div><button class="button primary full" id="checkoutBtn" data-i18n="checkout">Continuar pedido →</button></aside>
+    <aside class="drawer admin-drawer" id="adminDrawer"><button class="close" data-close="adminDrawer">×</button><div class="admin-head"><div><p class="eyebrow">DASHBOARD</p><h2>Administración</h2></div><span class="live">● EN VIVO</span></div><div class="stats"><div><span>Ventas hoy</span><b>Q4,280</b></div><div><span>Órdenes</span><b>36</b></div><div><span>Ticket prom.</span><b>Q119</b></div></div><div class="admin-products-head"><h3>Productos</h3><button class="add-product" id="addProductBtn">+ Agregar</button></div><div id="adminProducts" class="admin-products"></div></aside>
+    <dialog id="productDialog"><button class="close" data-close="productDialog">×</button><div id="dialogContent"></div></dialog>
+    <dialog id="formDialog"><button class="close" data-close="formDialog">×</button><h2>Nuevo producto</h2><form id="productForm"><label>Nombre<input required name="name" placeholder="Ej. Latte de vainilla" /></label><label>Descripción<input required name="description" placeholder="Una breve descripción" /></label><div class="form-row"><label>Precio (Q)<input required name="price" type="number" min="1" step="0.5" /></label><label>Categoría<select name="category"><option>Café</option><option>Bebidas frías</option><option>Desayunos</option><option>Comidas</option><option>Postres</option></select></label></div><label>URL de imagen (opcional)<input name="image" placeholder="https://..." /></label><button class="button primary full" type="submit">Guardar producto</button></form></dialog>
+    <dialog id="tableDialog"><button class="close" data-close="tableDialog">×</button><p class="eyebrow">CASI LISTO</p><h2>¿En qué mesa estás?</h2><p class="dialog-text">Así enviaremos tu orden correctamente al equipo.</p><form id="tableForm"><label>Selecciona tu mesa<select name="table" id="tableSelect" required><option value="">Elige una mesa</option><option>Mesa 01</option><option>Mesa 02</option><option>Mesa 03</option><option>Mesa 04</option><option>Mesa 05</option><option>Mesa 06</option><option>Para llevar</option></select></label><label>Método de pago<select name="payment" id="paymentMethod"><option value="pendiente">Pagar al recibir</option><option value="tarjeta">Tarjeta (pago en línea)</option></select></label><div id="cardFields" hidden><div class="card-preview"><span>HuehueCofee</span><b>•••• &nbsp;•••• &nbsp;•••• &nbsp;<i id="cardPreview">••••</i></b><small id="cardPreviewName">NOMBRE EN TARJETA</small></div><label>Nombre en la tarjeta<input name="cardName" id="cardName" autocomplete="cc-name" placeholder="Nombre completo" /></label><label>Número de tarjeta<input name="cardNumber" id="cardNumber" inputmode="numeric" autocomplete="cc-number" maxlength="19" placeholder="1234 5678 9012 3456" /></label><div class="form-row"><label>Vencimiento<input name="cardExpiry" id="cardExpiry" inputmode="numeric" autocomplete="cc-exp" maxlength="5" placeholder="MM/AA" /></label><label>CVV<input name="cardCvv" inputmode="numeric" autocomplete="cc-csc" maxlength="4" placeholder="123" /></label></div><p class="card-secure">🔒 Pago protegido · Datos cifrados</p></div><label>Observaciones para tu orden<input name="note" placeholder="Ej. sin azúcar, alergia..." /></label><button class="button primary full" type="submit">Confirmar y enviar pedido →</button></form></dialog>
+    <div class="overlay" id="overlay"></div><div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
